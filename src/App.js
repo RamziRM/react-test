@@ -11,7 +11,7 @@ class App extends Component {
     };
   }
 
-  hancdleChange = (e) => {
+  handleChange = (e) => {
     this.setState({
       task: { text: e.target.value }
     });
@@ -19,9 +19,10 @@ class App extends Component {
 
   onSubmitTask = (e) => {
     e.preventDefault();
-    this.setStateState({
+    this.setState({
       tasks: this.state.tasks.concat(this.state.task),
       task: { text: '' }
+      // above clears the input field after submit - for next task input
     });
   };
   
@@ -31,8 +32,13 @@ class App extends Component {
     return (
       <div>
         <h1>Task list</h1>
-        <form>
-          <input type="text" id="taskInput" placeholder="Add task" />
+        <form onSubmit={this.onSubmitTask}>
+          <input
+          onChange={this.handleChange}
+          value={task.text}
+          type="text" 
+          id="taskInput" 
+          placeholder="Add task" />
           <button type="submit">Add</button>
         </form>
       </div>
