@@ -6,8 +6,14 @@ const Overview = (props) => {
 
     return (
     <ul>
-        {tasks.map((task) => {
-            return <li key={task.id}>{task.text}</li>;
+        {tasks.map((task, index) => {
+            return (
+                <div className='task-cont'>
+                    <li key={task.id}>{index+1}. {task.text}</li>
+                    <button type="button">Delete</button>
+                </div>
+            );
+
         })}
     </ul>
     );
