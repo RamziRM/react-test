@@ -1,8 +1,13 @@
-import React from 'react';
+import React from "react";
 
 // Render tasks in a list
 const Overview = (props) => {
-    const { tasks } = props;
+    const { tasks, setTasks } = props;
+
+    const handleDelete = (id) => {
+        const updatedTasks = tasks.filter((task) => task.id !== id);
+        setTasks(updatedTasks);
+    };
 
     return (
     <ul>
@@ -10,7 +15,11 @@ const Overview = (props) => {
             return (
                 <div id='task-cont' key={index}>
                     <li key={task.id}>{index+1}. {task.text}</li>
-                    <button type="button" id='del-btn'>Delete</button>
+                    <button 
+                    type="button"
+                    id='del-btn'
+                    onClick={() => handleDelete(task.id)}
+                    >X</button>
                 </div>
             );
 
