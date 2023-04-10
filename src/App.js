@@ -50,10 +50,11 @@ class App extends Component {
           type="text" 
           id="taskInput" 
           placeholder="Add task" 
-          autoFocus/>
+          autoFocus
+          autoComplete="off"/>
           <button id="submit-btn" type="submit">Add</button>
         </form>
-        <Overview tasks={tasks} />
+        <Overview tasks={tasks} setTasks={(updatedTasks) => this.setState({ tasks: updatedTasks })} />
       </div>
     );
   }
