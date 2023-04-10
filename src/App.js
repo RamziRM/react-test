@@ -41,7 +41,7 @@ class App extends Component {
     const { task, tasks } = this.state;
 
     return (
-      <div>
+      <div className="main-cont">
         <h1>Task list</h1>
         <form onSubmit={this.onSubmitTask}>
           <input
@@ -49,8 +49,9 @@ class App extends Component {
           value={task.text}
           type="text" 
           id="taskInput" 
-          placeholder="Add task" />
-          <button type="submit">Add</button>
+          placeholder="Add task" 
+          autoFocus/>
+          <button id="submit-btn" type="submit">Add</button>
         </form>
         <Overview tasks={tasks} />
       </div>
