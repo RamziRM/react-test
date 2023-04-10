@@ -8,9 +8,9 @@ const Overview = (props) => {
     <ul>
         {tasks.map((task, index) => {
             return (
-                <div className='task-cont'>
+                <div id='task-cont' key={index}>
                     <li key={task.id}>{index+1}. {task.text}</li>
-                    <button type="button">Delete</button>
+                    <button type="button" id='del-btn'>Delete</button>
                 </div>
             );
 
