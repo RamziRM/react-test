@@ -22,10 +22,15 @@ body {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin-top: 0;
     /* text-align: center; */
-}
+    background-color: darkslategray;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
 
 form {
     display: flex;

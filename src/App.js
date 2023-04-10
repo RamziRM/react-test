@@ -42,7 +42,7 @@ class App extends Component {
 
     return (
       <div className="main-cont">
-        <h1>Task list</h1>
+        <h1>JustStart.app</h1>
         <form onSubmit={this.onSubmitTask}>
           <input
           onChange={this.handleChange}
